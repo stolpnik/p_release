@@ -1,0 +1,11 @@
+{
+	"name": "p",
+	"version": "0.1.2",
+	"main": "./p.js",
+	"dependencies": {
+		"jquery" : "1.7.0~",
+		"hoganjs" : "2.0.0",
+		"showdown" : "*",
+		"jquery.touchSwipe" : "*"
+	}
+}

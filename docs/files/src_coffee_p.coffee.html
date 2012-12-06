@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src&#x2F;coffee&#x2F;p.coffee - yt</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.7.0&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="..&#x2F;assets/favicon.png">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;combo?3.7.0&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title="yt"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/P.html">P</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src&#x2F;coffee&#x2F;p.coffee</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+S = null
+R = null
+
+class P
+	###
+	* constatns
+	###
+	###*
+	@property SPLIT_STR
+	@static
+	@default |||||
+	@since 0.1.0
+	###
+	@SPLIT_STR : &quot;|||||&quot;
+	###*
+	@property LEFT
+	@static
+	@default 37
+	@since 0.1.0
+	###
+	@LEFT : 37
+	###*
+	@property UP
+	@static
+	@default 38
+	@since 0.1.0
+	###
+	@UP : 38
+	###*
+	@property RIGHT
+	@static
+	@default 39
+	@since 0.1.0
+	###
+	@RIGHT : 39
+	###*
+	@property DOWN
+	@static
+	@default 40
+	@since 0.1.0
+	###
+	@DOWN : 40
+
+	###*
+	@property IDLE
+	@static
+	@default 0
+	@since 0.1.0
+	###
+	@IDLE : 0
+	###*
+	@property FIRED
+	@static
+	@default 1
+	@since 0.1.0
+	###
+	@FIRED : 1
+
+	###
+	* properties
+	###
+
+	###*
+	@property data
+	@type Object
+	@default null
+	@since 0.1.0
+	###
+	data  : null
+	###*
+	@property title
+	@type String
+	@default null
+	@since 0.1.0
+	###
+	title : null
+	###*
+	@property pages
+	@type Array
+	@default null
+	@since 0.1.0
+	###
+	pages : null
+	###*
+	@property renderer
+	@type Renderer
+	@default null
+	@since 0.1.0
+	###
+	renderer : null
+	###*
+	@property lastPage
+	@type Number
+	@default 1
+	@since 0.1.0
+	###
+	lastPage : 1
+	###*
+	@property currentPage
+	@type Number
+	@default 1
+	@since 0.1.0
+	###
+	currentPage : 1
+	###*
+	@property totalPages
+	@type Number
+	@default 1
+	@since 0.1.0
+	###
+	totalPages : 0
+	###*
+	@property keyState
+	@type Number
+	@default P.IDLE
+	@since 0.1.0
+	###
+	keyState : P.IDLE
+
+	###*
+	simple slide for presentation
+
+	@class P
+	@constructor
+	@param {String} [target=body]
+	@param {Renderer} [renderer=S]
+	@since 0.1.0
+	###
+	constructor : (target = &#x27;body&#x27;, renderer = S)-&gt;
+		this.data = &quot;&quot;
+		this.title = &quot;&quot;
+		this.pages = []
+		this.renderer = new renderer( target )
+
+	###*
+	@method init
+	@param [target=p.md] {String} path to markdown file to load
+	@since 0.1.0
+	###
+	init : ( target = &quot;p.md&quot; )-&gt;
+		myself = this
+		dfd = $.Deferred()
+		$.when( this.load target )
+			.done(
+				(d)-&gt;
+					myself.addPages myself.parse( d )
+					myself.setup()
+					dfd.resolve()
+			).fail(
+				(e)-&gt;
+					throw e
+					dfd.reject()
+			)
+		return dfd.promise()
+
+	###*
+	@method load
+	@param [target=p.md] {String} path to markdown file to load
+	@since 0.1.0
+	###
+	load : ( target = &quot;p.md&quot; )-&gt;
+		dfd = $.get( target )
+		$.when(
+			dfd
+		)
+		.done(
+			(d)-&gt;
+				this.data = d
+		)
+		.fail(
+			(e)-&gt;
+				throw e
+		)
+		return dfd
+
+	###*
+	@method parse
+	@param data {Object} data object converted from md
+	@since 0.1.0
+	###
+	parse : (data)-&gt;
+		converter = new Showdown.converter()
+		return converter.makeHtml( data )
+
+	###*
+	add pages to slide
+
+	@method addPages
+	@param md {String}
+	@since 0.1.0
+	###
+	addPages : (md)-&gt;
+		titleRegExp = &#x2F;(&lt;h1.+&quot;?&gt;.+&lt;\&#x2F;h1&gt;)&#x2F;
+		title = md.match( titleRegExp )
+		if title[0]?
+			this.title = title[0]
+		md = md.replace( titleRegExp, &#x27;&#x27;)
+		pageTitles = md.match(&#x2F;(&lt;h2.+&quot;?&gt;.+&lt;\&#x2F;h2&gt;)&#x2F;g)
+		md = md.replace(&#x2F;(&lt;h2.+&quot;?&gt;.+&lt;\&#x2F;h2&gt;)&#x2F;g, P.SPLIT_STR )
+		pageBodies = md.split( P.SPLIT_STR )
+		pageBodies.shift()
+		this.totalPages = pageTitles.length
+		for pt, i in pageTitles
+			this.pages.push( &quot;#{pt}\n#{pageBodies[i]}&quot; )
+
+	###*
+	set up presentation!
+
+	@method setup
+	@since 0.1.0
+	###
+	setup : -&gt;
+		this.renderer.render( this )
+		$(document).keydown( this.pageMove )
+		$(document).keyup(
+			(e)=&gt;
+				this.keyState = P.IDLE
+		)
+		$(window).swipe(
+			swipe : this.pageMoveWithSwipe
+		)
+		$(window).resize( this.renderer.resize )
+		this.restoreFromUrl()
+
+	###*
+	show a passed page
+
+	@method show
+	@param {Number} [pageNum=1] page number to show
+	@since 0.1.0
+	###
+	show : (pageNum = 1)-&gt;
+		this.lastPage = this.currentPage
+		this.currentPage = pageNum
+		page = this.pages[pageNum - 1]
+		this.renderer.showPage pageNum, this.lastPage
+		location.hash = &quot;#&quot; + pageNum
+		return page
+
+	###*
+	event handler for page move
+
+	@method pageMove
+	@param {Event} e
+	@protected
+	@since 0.1.0
+	###
+	pageMove : (e)=&gt;
+		return if this.keyState is P.FIRED
+		switch e.keyCode
+			when P.RIGHT
+				this.next()
+				this.keyState = P.FIRED
+			when P.LEFT
+				this.prev()
+				this.keyState = P.FIRED
+			when P.UP
+				this.show( 1 )
+				this.keyState = P.FIRED
+			when P.DOWN
+				this.show( this.totalPages )
+				this.keyState = P.FIRED
+
+	###
+	restore page from url
+
+	@method restoreFromUrl
+	@since 0.1.2
+	###
+	restoreFromUrl : -&gt;
+		hash = location.hash.match(&#x2F;#(\d+)&#x2F;)
+		if hash?.length &gt; 1
+			this.show parseInt( hash[1], 10 )
+
+	###
+	event handler for swipe(using jquery.touchSwipe.js)
+
+	@method pageMoveWithSwipe
+	###
+	pageMoveWithSwipe : (e, dir, dist, duration, fingerCount) =&gt;
+		#return if this.keyState is P.FIRED
+		switch dir
+			when &quot;right&quot;
+				this.next()
+				#this.keyState = P.FIRED
+			when &quot;left&quot;
+				this.prev()
+				#this.keyState = P.FIRED
+			when &quot;up&quot;
+				this.show( 1 )
+				#this.keyState = P.FIRED
+			when &quot;down&quot;
+				this.show( this.totalPages )
+				#this.keyState = P.FIRED
+
+	###*
+	show a next page
+
+	@method next
+	@since 0.1.0
+	###
+	next : -&gt;
+		nextPage = if this.currentPage is this.totalPages then 1 else this.currentPage + 1
+		this.show nextPage
+
+	###*
+	show a prev page
+
+	@method prev
+	@since 0.1.0
+	###
+	prev : -&gt;
+		prevPage = if this.currentPage is 1 then this.totalPages else this.currentPage - 1
+		this.show prevPage
+
+if define?
+	define(
+		[&quot;s&quot;, &quot;r&quot;]
+		,(s, r)-&gt;
+			S = s
+			R = r
+			return {
+				P : P
+				,S : S
+				,R : R
+			}
+	)
+else
+	@p ||= {}
+	@p.P = P
+	S = @p.S
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+{
+    "project": {
+        "name": "yt",
+        "description": "youtube movie player",
+        "version": "0.1.0",
+        "url": "http://www.tac.co.jp/"
+    },
+    "files": {
+        "src/coffee/p.coffee": {
+            "name": "src/coffee/p.coffee",
+            "modules": {},
+            "classes": {
+                "P": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "P": {
+            "name": "P",
+            "shortname": "P",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/coffee/p.coffee",
+            "line": 120,
+            "description": "simple slide for presentation",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "target",
+                    "description": "",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "body"
+                },
+                {
+                    "name": "renderer",
+                    "description": "",
+                    "type": "Renderer",
+                    "optional": true,
+                    "optdefault": "S"
+                }
+            ],
+            "since": "0.1.0"
+        }
+    },
+    "classitems": [
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 8,
+            "itemtype": "property",
+            "name": "SPLIT_STR",
+            "static": 1,
+            "default": "|||||",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 15,
+            "itemtype": "property",
+            "name": "LEFT",
+            "static": 1,
+            "default": "37",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 22,
+            "itemtype": "property",
+            "name": "UP",
+            "static": 1,
+            "default": "38",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 29,
+            "itemtype": "property",
+            "name": "RIGHT",
+            "static": 1,
+            "default": "39",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 36,
+            "itemtype": "property",
+            "name": "DOWN",
+            "static": 1,
+            "default": "40",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 44,
+            "itemtype": "property",
+            "name": "IDLE",
+            "static": 1,
+            "default": "0",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 51,
+            "itemtype": "property",
+            "name": "FIRED",
+            "static": 1,
+            "default": "1",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 63,
+            "itemtype": "property",
+            "name": "data",
+            "type": "Object",
+            "default": "null",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 70,
+            "itemtype": "property",
+            "name": "title",
+            "type": "String",
+            "default": "null",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 77,
+            "itemtype": "property",
+            "name": "pages",
+            "type": "Array",
+            "default": "null",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 84,
+            "itemtype": "property",
+            "name": "renderer",
+            "type": "Renderer",
+            "default": "null",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 91,
+            "itemtype": "property",
+            "name": "lastPage",
+            "type": "Number",
+            "default": "1",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 98,
+            "itemtype": "property",
+            "name": "currentPage",
+            "type": "Number",
+            "default": "1",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 105,
+            "itemtype": "property",
+            "name": "totalPages",
+            "type": "Number",
+            "default": "1",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 112,
+            "itemtype": "property",
+            "name": "keyState",
+            "type": "Number",
+            "default": "P.IDLE",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 135,
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "path to markdown file to load",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "p.md"
+                }
+            ],
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 156,
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "path to markdown file to load",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "p.md"
+                }
+            ],
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 176,
+            "itemtype": "method",
+            "name": "parse",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "data object converted from md",
+                    "type": "Object"
+                }
+            ],
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 185,
+            "description": "add pages to slide",
+            "itemtype": "method",
+            "name": "addPages",
+            "params": [
+                {
+                    "name": "md",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 206,
+            "description": "set up presentation!",
+            "itemtype": "method",
+            "name": "setup",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 225,
+            "description": "show a passed page",
+            "itemtype": "method",
+            "name": "show",
+            "params": [
+                {
+                    "name": "pageNum",
+                    "description": "page number to show",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "1"
+                }
+            ],
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 240,
+            "description": "event handler for page move",
+            "itemtype": "method",
+            "name": "pageMove",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "Event"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 296,
+            "description": "show a next page",
+            "itemtype": "method",
+            "name": "next",
+            "since": "0.1.0",
+            "class": "P"
+        },
+        {
+            "file": "src/coffee/p.coffee",
+            "line": 306,
+            "description": "show a prev page",
+            "itemtype": "method",
+            "name": "prev",
+            "since": "0.1.0",
+            "class": "P"
+        }
+    ],
+    "warnings": []
+}
